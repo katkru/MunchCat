@@ -98,8 +98,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
-        final GameKontroller gamekontroller = new GameKontroller();
-        gamekontroller.setVisible(true);
+        final GameController gamecontroller = new GameController();
+        gamecontroller.setVisible(true);
         close();
     }//GEN-LAST:event_playButtonActionPerformed
 
