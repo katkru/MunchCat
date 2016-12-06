@@ -112,6 +112,7 @@ public class Instruction extends javax.swing.JFrame {
         getContentPane().add(card2);
         card2.setBounds(240, 700, 170, 290);
 
+        card3.setFocusCycleRoot(true);
         card3.setName(""); // NOI18N
         card3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -246,7 +247,7 @@ public class Instruction extends javax.swing.JFrame {
         @Override
         public void actionPerformed(ActionEvent ev) {
             ++counter;
-            background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
+            setBackground();
             if (counter == 6) {
                 timer.stop();
                 card1.setName("mlody");
@@ -259,7 +260,11 @@ public class Instruction extends javax.swing.JFrame {
         }
     };
 
-
+    private void setBackground() {
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
+        this.validate();
+        this.repaint();
+    }
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         ++counter;
@@ -271,12 +276,13 @@ public class Instruction extends javax.swing.JFrame {
             timer.start();
         }
         if (counter == 7) {
-            background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
+            setBackground();
             arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arrow.gif")));
             nextButton.setVisible(false);
+            card4.requestFocus();
         } else {
-            background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
-            nextButton.requestFocusInWindow();
+            setBackground();
+            nextButton.requestFocus();
         }
         /*Dice dice = new Dice(this, true);
         dice.setVisible(true);
@@ -286,30 +292,33 @@ public class Instruction extends javax.swing.JFrame {
     private void card4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_card4MouseClicked
         if (counter == 7) {
             ++counter;
-            background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
+            setBackground();
             arrow1.setVisible(false);
             playSound("src/img/sounds/card.wav");
             arrow2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arrow.gif")));
             card4.setName("");
             card5.setName("wojownik");
             enlargedCard.setIcon(null);
+            card3.requestFocus();
         }
     }//GEN-LAST:event_card4MouseClicked
 
     private void card3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_card3MouseClicked
         if (counter == 8) {
             ++counter;
-            background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
+            setBackground();
+
             arrow2.setVisible(false);
             playSound("src/img/sounds/card.wav");
             card3.setName("");
             card6.setName("pila");
             nextButton.setVisible(true);
             enlargedCard.setIcon(null);
+            //this.requestFocus();
         }
     }//GEN-LAST:event_card3MouseClicked
 
-        private void cardMouseExited() {
+    private void cardMouseExited() {
         enlargedCard.setIcon(null);
     }
 
@@ -319,7 +328,7 @@ public class Instruction extends javax.swing.JFrame {
             enlargedCard.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
         }
     }
-    
+
     public void close() {
         java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue().
                 postEvent(new java.awt.event.WindowEvent(this, java.awt.event.WindowEvent.WINDOW_CLOSING));

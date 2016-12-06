@@ -147,6 +147,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="card3">
       <Properties>
+        <Property name="focusCycleRoot" type="boolean" value="true"/>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
       <Events>
