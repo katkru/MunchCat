@@ -37,12 +37,16 @@ public class Instruction extends javax.swing.JFrame {
         enlargedCard = new javax.swing.JLabel();
         arrow1 = new javax.swing.JLabel();
         arrow2 = new javax.swing.JLabel();
+        cardTable = new javax.swing.JLabel();
         card1 = new javax.swing.JLabel();
         card2 = new javax.swing.JLabel();
         card3 = new javax.swing.JLabel();
         card4 = new javax.swing.JLabel();
         card5 = new javax.swing.JLabel();
         card6 = new javax.swing.JLabel();
+        card9 = new javax.swing.JLabel();
+        card7 = new javax.swing.JLabel();
+        card8 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -64,7 +68,7 @@ public class Instruction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nextButton);
-        nextButton.setBounds(1020, 70, 90, 40);
+        nextButton.setBounds(1730, 830, 90, 40);
 
         exitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         exitButton.setBorderPainted(false);
@@ -92,7 +96,7 @@ public class Instruction extends javax.swing.JFrame {
 
         enlargedCard.setFocusable(false);
         getContentPane().add(enlargedCard);
-        enlargedCard.setBounds(1130, 30, 230, 400);
+        enlargedCard.setBounds(1650, 140, 230, 400);
 
         arrow1.setFocusable(false);
         arrow1.setName(""); // NOI18N
@@ -103,6 +107,10 @@ public class Instruction extends javax.swing.JFrame {
         arrow2.setName(""); // NOI18N
         getContentPane().add(arrow2);
         arrow2.setBounds(480, 560, 40, 110);
+
+        cardTable.setName(""); // NOI18N
+        getContentPane().add(cardTable);
+        cardTable.setBounds(680, 400, 90, 150);
 
         card1.setName(""); // NOI18N
         getContentPane().add(card1);
@@ -138,6 +146,18 @@ public class Instruction extends javax.swing.JFrame {
         card6.setName(""); // NOI18N
         getContentPane().add(card6);
         card6.setBounds(140, 510, 50, 90);
+
+        card9.setName(""); // NOI18N
+        getContentPane().add(card9);
+        card9.setBounds(220, 510, 50, 90);
+
+        card7.setName(""); // NOI18N
+        getContentPane().add(card7);
+        card7.setBounds(60, 350, 50, 90);
+
+        card8.setName(""); // NOI18N
+        getContentPane().add(card8);
+        card8.setBounds(140, 350, 50, 90);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/0.jpg"))); // NOI18N
         background.setFocusable(false);
@@ -214,6 +234,42 @@ public class Instruction extends javax.swing.JFrame {
                 cardMouseExited();
             }
         });
+        card7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cardMouseEntered(card7.getName());
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cardMouseExited();
+            }
+        });
+        card8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cardMouseEntered(card8.getName());
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cardMouseExited();
+            }
+        });
+        card9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cardMouseEntered(card9.getName());
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cardMouseExited();
+            }
+        });
+        cardTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cardMouseEntered(cardTable.getName());
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cardMouseExited();
+            }
+        });
     }
 
     private void playSound(String soundName) {
@@ -260,6 +316,20 @@ public class Instruction extends javax.swing.JFrame {
         }
     };
 
+    private ActionListener timerAction2 = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent ev) {
+            ++counter;
+            setBackground();
+            playSound("src/img/sounds/card.wav");
+            if (counter == 11) {
+                timer.stop();
+                card7.setName("elf");
+                card8.setName("miecz");
+            }
+        }
+    };
+
     private void setBackground() {
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/" + counter + ".jpg")));
         this.validate();
@@ -270,23 +340,83 @@ public class Instruction extends javax.swing.JFrame {
         ++counter;
         playSound("src/img/sounds/next.wav");
 
-        if (counter == 2) {
-            --counter;
-            timer = new Timer(400, timerAction);
-            timer.start();
+        switch (counter) {
+            case 2:
+                --counter;
+                timer = new Timer(400, timerAction);
+                timer.start();
+                break;
+
+            case 7:
+                setBackground();
+                arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arrow.gif")));
+                nextButton.setVisible(false);
+                card4.requestFocus();
+                break;
+            case 10:
+                --counter;
+                timer = new Timer(400, timerAction2);
+                timer.start();
+                break;
+            case 14:
+                setBackground();
+                cardTable.setName("klatwa");
+                playSound("src/img/sounds/card.wav");
+                break;
+            case 16:
+                setBackground();
+                cardTable.setName("");
+                break;
+            case 19:
+                setBackground();
+                cardTable.setName("osmioscian");
+                playSound("src/img/sounds/card.wav");
+                break;
+            case 23:
+                setBackground();
+                cardTable.setName("");
+                card3.setName("buty");
+                playSound("src/img/sounds/ding.wav");
+                break;
+            case 24:
+                arrow2.setVisible(true);
+                nextButton.setVisible(false);
+                setBackground();
+                break;
+            case 26:
+                cardTable.setName("powtorka");
+                playSound("src/img/sounds/ding.wav");
+                setBackground();
+                break;
+            case 27:
+                cardTable.setName("");
+                setBackground();
+                break;
+            case 28:
+                cardTable.setName("rozwscieczony");
+                playSound("src/img/sounds/card.wav");
+                setBackground();
+                break;
+            case 29:
+                cardTable.setName("");
+                setBackground();
+                break;
+            case 30:
+                cardTable.setName("drob");
+                playSound("src/img/sounds/card.wav");
+                setBackground();
+                break;
+            case 33:
+                cardTable.setName("");
+                playSound("src/img/sounds/ding.wav");
+                nextButton.setVisible(false);
+                setBackground();
+                break;                  
+            default:
+                setBackground();
+                nextButton.requestFocus();
+                break;
         }
-        if (counter == 7) {
-            setBackground();
-            arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arrow.gif")));
-            nextButton.setVisible(false);
-            card4.requestFocus();
-        } else {
-            setBackground();
-            nextButton.requestFocus();
-        }
-        /*Dice dice = new Dice(this, true);
-        dice.setVisible(true);
-        close();*/
     }//GEN-LAST:event_nextButtonActionPerformed
 
     private void card4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_card4MouseClicked
@@ -306,15 +436,22 @@ public class Instruction extends javax.swing.JFrame {
     private void card3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_card3MouseClicked
         if (counter == 8) {
             ++counter;
-            setBackground();
-
             arrow2.setVisible(false);
             playSound("src/img/sounds/card.wav");
             card3.setName("");
             card6.setName("pila");
             nextButton.setVisible(true);
             enlargedCard.setIcon(null);
-            //this.requestFocus();
+            setBackground();
+        } else if (counter == 24) {
+            ++counter;
+            arrow2.setVisible(false);
+            playSound("src/img/sounds/card.wav");
+            card3.setName("");
+            card9.setName("buty");
+            nextButton.setVisible(true);
+            enlargedCard.setIcon(null);
+            setBackground();
         }
     }//GEN-LAST:event_card3MouseClicked
 
@@ -344,6 +481,10 @@ public class Instruction extends javax.swing.JFrame {
     private javax.swing.JLabel card4;
     private javax.swing.JLabel card5;
     private javax.swing.JLabel card6;
+    private javax.swing.JLabel card7;
+    private javax.swing.JLabel card8;
+    private javax.swing.JLabel card9;
+    private javax.swing.JLabel cardTable;
     private javax.swing.JLabel enlargedCard;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton menuButton;
