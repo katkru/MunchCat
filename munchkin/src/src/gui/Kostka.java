@@ -10,11 +10,13 @@ public class Kostka extends javax.swing.JDialog {
     private Random generator = new Random();
     private int value;
     private Timer timerDice;
+    private final String marnyKoniec;
 
-    public Kostka(java.awt.Frame parent) {
+    public Kostka(java.awt.Frame parent, String k) {
         super(parent, true);
         initComponents();
-        timerDice = new Timer(100, diceAction);
+        marnyKoniec = k;
+        timerDice = new Timer(500, diceAction);
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent e) {
@@ -43,6 +45,7 @@ public class Kostka extends javax.swing.JDialog {
     private void initComponents() {
 
         dice = new javax.swing.JLabel();
+        text = new javax.swing.JLabel();
         okButton = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -60,13 +63,16 @@ public class Kostka extends javax.swing.JDialog {
         });
         getContentPane().add(dice, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 130, 120));
 
+        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 40));
+
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(okButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        getContentPane().add(okButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 320));
@@ -76,6 +82,11 @@ public class Kostka extends javax.swing.JDialog {
 
     private void diceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_diceMouseClicked
         timerDice.stop();
+        if (value >= 5) {
+            text.setText("Uff, udało ci się uciec");
+        } else {
+            text.setText("Niestety " + marnyKoniec);
+        }
         okButton.setVisible(true);
         pack();
     }//GEN-LAST:event_diceMouseClicked
@@ -96,5 +107,6 @@ public class Kostka extends javax.swing.JDialog {
     private javax.swing.JLabel background;
     private javax.swing.JLabel dice;
     private javax.swing.JButton okButton;
+    private javax.swing.JLabel text;
     // End of variables declaration//GEN-END:variables
 }

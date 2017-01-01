@@ -1,6 +1,5 @@
 package src;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -26,6 +25,11 @@ public class DystrybutorKart {
         kartyDrzwi.add(new Drzwi("elf"));
         kartyDrzwi.add(new Drzwi("wojownik"));
         kartyDrzwi.add(new Potwor("drob", "tracisz 1 poziom", 1, 2));
+        kartyDrzwi.add(new Potwor("osmioscian", "odrzuc wszystkie duże rzeczy", 1, 2));
+        kartyDrzwi.add(new Drzwi("elf"));
+        kartyDrzwi.add(new Drzwi("wojownik"));
+        kartyDrzwi.add(new Potwor("drob", "tracisz 1 poziom", 1, 2));
+
         potasujKarty(kartyDrzwi);
     }
 
@@ -34,6 +38,13 @@ public class DystrybutorKart {
         kartySkarbow.add(new Przedmiot("pila", 3));
         kartySkarbow.add(new Przedmiot("miecz", 2));
         kartySkarbow.add(new Przedmiot("buty", 1));
+        kartySkarbow.add(new Przedmiot("portki", 1));
+        kartySkarbow.add(new Przedmiot("hełm", 2));
+        kartySkarbow.add(new Przedmiot("pila", 3));
+        kartySkarbow.add(new Przedmiot("miecz", 2));
+        kartySkarbow.add(new Przedmiot("buty", 1));
+        kartySkarbow.add(new Przedmiot("portki", 1));
+        kartySkarbow.add(new Przedmiot("hełm", 2));
         potasujKarty(kartySkarbow);
     }
 

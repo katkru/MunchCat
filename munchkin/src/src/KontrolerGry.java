@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class KontrolerGry {
 
-    public Gracz gracz;
-    public Gracz komputer;
-    public DystrybutorKart karty;
+    public static Gracz gracz;
+    public static Gracz komputer;
+    public static DystrybutorKart karty;
 
     public KontrolerGry() {
         karty = new DystrybutorKart();

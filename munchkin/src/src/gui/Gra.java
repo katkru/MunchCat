@@ -2,17 +2,15 @@ package src.gui;
 
 import java.awt.Component;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+
 import javax.swing.JPanel;
-import src.Gracz;
+import src.*;
 import src.karty.*;
-import src.KontrolerGry;
 
 public class Gra extends javax.swing.JFrame {
 
-    KontrolerGry kontroler;
+    public static KontrolerGry kontroler;
+    Tura tura;
 
     public Gra() {
         initComponents();
@@ -20,13 +18,15 @@ public class Gra extends javax.swing.JFrame {
         setResizable(true);
         wezDoRekiButton.setVisible(false);
         walczButton.setVisible(false);
+        koniecTuryButton.setVisible(false);
         kontroler = new KontrolerGry();
+        tura = new Tura();
         ustawKartyNaPanelu(kartyWRece, kontroler.gracz.kartyWRece);
     }
 
-    public void aktualizujGracza() {
+    public void aktualizujKartyIPoziomyGracza() {
         poziom.setText("Twój poziom: " + kontroler.gracz.poziom);
-        poziomBojowy.setText("Twój poziom bojowy: " + kontroler.gracz.poziomBojowy);
+        poziomBojowy.setText("Twój poziom bojowy: " + kontroler.gracz.poziomBojowy());
 
         ustawKartyNaPanelu(kartyNaStole, kontroler.gracz.kartyNaStole);
         ustawKartyNaPanelu(kartyWRece, kontroler.gracz.kartyWRece);
@@ -204,27 +204,26 @@ public class Gra extends javax.swing.JFrame {
 
     private void wylozZRekiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wylozZRekiButtonActionPerformed
         CopyOnWriteArrayList<Karta> zaznaczoneKarty = zaznaczoneKarty(kartyWRece);
-        kontroler.gracz.wylozKartyNaStol(zaznaczoneKarty);
-        aktualizujGracza();
+        KontrolerGry.gracz.wylozKartyNaStol(zaznaczoneKarty);
+        aktualizujKartyIPoziomyGracza();
     }//GEN-LAST:event_wylozZRekiButtonActionPerformed
 
     private void koniecTuryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koniecTuryButtonActionPerformed
-        kontroler.komputer.wylozKartyNaStol(kontroler.komputer.kartyWRece);
+        /*kontroler.komputer.wylozKartyNaStol(kontroler.komputer.kartyWRece);
         ustawKartyNaPanelu(kartyNaStoleKomputera, kontroler.komputer.kartyNaStole);
-        poziomBojowyKomputera.setText("Poziom bojowy komputera: " + kontroler.komputer.poziomBojowy);
+        poziomBojowyKomputera.setText("Poziom bojowy komputera: " + kontroler.komputer.poziomBojowy());*/
+        otworzDrzwi.setVisible(true);
     }//GEN-LAST:event_koniecTuryButtonActionPerformed
 
     private void otworzDrzwiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otworzDrzwiActionPerformed
-        Drzwi d = kontroler.karty.nastepnaKartaDrzwi();
+        otworzDrzwi.setVisible(false);
+        Drzwi d = KontrolerGry.karty.nastepnaKartaDrzwi();
         CopyOnWriteArrayList<Karta> nastepneDrzwi = new CopyOnWriteArrayList();
         nastepneDrzwi.add(d);
         ustawKartyNaPanelu(otwarteDrzwi, nastepneDrzwi);
 
         if (d instanceof Potwor) {
             walczButton.setVisible(true);
-            ///
-            ///
-            kontroler.karty.odrzuconeDrzwi.add(d);
         } else {
             wezDoRekiButton.setVisible(true);
         }
@@ -232,20 +231,27 @@ public class Gra extends javax.swing.JFrame {
 
     private void wezDoRekiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wezDoRekiButtonActionPerformed
         kontroler.gracz.kartyWRece.add(((KartaGUI) otwarteDrzwi.getComponent(0)).karta);
-        aktualizujGracza();
-        otwarteDrzwi.removeAll();
-        otwarteDrzwi.repaint();
-        otwarteDrzwi.revalidate();
+        aktualizujKartyIPoziomyGracza();
+        wyczyscKartyPoOtwarciuDrzwi();
         wezDoRekiButton.setVisible(false);
+        koniecTuryButton.setVisible(true);//roboczo bo to nie kończy jeszcze tury, trzeba pociągnąć kartę albo walczyc ze swoim potworem 
     }//GEN-LAST:event_wezDoRekiButtonActionPerformed
 
     private void walczButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_walczButtonActionPerformed
-        //if (kontroler.gracz.poziom > ((Potwor) ((KartaGUI) otwarteDrzwi.getComponent(0)).karta).poziom)
-        Kostka dice = new Kostka(this);
-        //Kostka.createInstance(this);
-        int number = dice.nextNumber();
-        System.out.println(number);
+        Potwor potwor = (Potwor) ((KartaGUI) otwarteDrzwi.getComponent(0)).karta;
+        tura.walka(KontrolerGry.gracz, potwor, this);
+
+        aktualizujKartyIPoziomyGracza();
+        wyczyscKartyPoOtwarciuDrzwi();
+        walczButton.setVisible(false);
+        koniecTuryButton.setVisible(true);
     }//GEN-LAST:event_walczButtonActionPerformed
+
+    private void wyczyscKartyPoOtwarciuDrzwi() {
+        otwarteDrzwi.removeAll();
+        otwarteDrzwi.repaint();
+        otwarteDrzwi.revalidate();
+    }
 
     private CopyOnWriteArrayList<Karta> zaznaczoneKarty(JPanel panel) {
         KartaGUI k;
