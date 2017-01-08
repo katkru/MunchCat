@@ -22,12 +22,14 @@ public class DystrybutorKart {
     private void zainicjalizujKartyDrzwi() {
         kartyDrzwi = new CopyOnWriteArrayList();
         kartyDrzwi.add(new Potwor("osmioscian", "odrzuc wszystkie duże rzeczy", 1, 2));
-        kartyDrzwi.add(new Drzwi("elf"));
-        kartyDrzwi.add(new Drzwi("wojownik"));
+        kartyDrzwi.add(new Rasa("rasa1"));
+        kartyDrzwi.add(new Klasa("klasa1"));
         kartyDrzwi.add(new Potwor("drob", "tracisz 1 poziom", 1, 2));
         kartyDrzwi.add(new Potwor("osmioscian", "odrzuc wszystkie duże rzeczy", 1, 2));
-        kartyDrzwi.add(new Drzwi("elf"));
-        kartyDrzwi.add(new Drzwi("wojownik"));
+        kartyDrzwi.add(new Rasa("rasa3"));
+        kartyDrzwi.add(new Rasa("rasa2"));
+        kartyDrzwi.add(new Klasa("klasa2"));
+        kartyDrzwi.add(new Klasa("klasa3"));
         kartyDrzwi.add(new Potwor("drob", "tracisz 1 poziom", 1, 2));
 
         potasujKarty(kartyDrzwi);

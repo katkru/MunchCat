@@ -4,7 +4,7 @@ public class Karta {
 
     public final String nazwa;
 
-    Karta(String n) {
+    public Karta(String n) {
         nazwa = n;
     }
     
