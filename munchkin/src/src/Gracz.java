@@ -33,6 +33,8 @@ public class Gracz {
         if (k instanceof Potwor) {
             return false;
         }
+        else if(k instanceof Klatwa)
+            return false;
         return true;
     }
 

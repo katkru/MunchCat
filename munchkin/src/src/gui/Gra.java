@@ -19,6 +19,9 @@ public class Gra extends javax.swing.JFrame {
         wezDoRekiButton.setVisible(false);
         walczButton.setVisible(false);
         koniecTuryButton.setVisible(false);
+        zrobioneButton.setVisible(false);
+        wezKarteDrzwiButton.setVisible(false);
+        walczZPotworemZRekiButton.setVisible(false);
         kontroler = new KontrolerGry();
         tura = new Tura();
         ustawKartyNaPanelu(kartyWRece, KontrolerGry.gracz.kartyWRece);
@@ -59,12 +62,15 @@ public class Gra extends javax.swing.JFrame {
 
         homeButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
+        walczZPotworemZRekiButton = new javax.swing.JButton();
+        wezKarteDrzwiButton = new javax.swing.JButton();
+        zrobioneButton = new javax.swing.JButton();
         koniecTuryButton = new javax.swing.JButton();
         otworzDrzwiButton = new javax.swing.JButton();
         walczButton = new javax.swing.JButton();
         odrzucKartyButton = new javax.swing.JButton();
-        wezDoRekiButton = new javax.swing.JButton();
         wylozZRekiButton = new javax.swing.JButton();
+        wezDoRekiButton = new javax.swing.JButton();
         otwarteDrzwi = new javax.swing.JPanel();
         kartyWRece = new javax.swing.JPanel();
         kartyNaStole = new javax.swing.JPanel();
@@ -72,6 +78,7 @@ public class Gra extends javax.swing.JFrame {
         rasa = new javax.swing.JLabel();
         poziomBojowy = new javax.swing.JLabel();
         poziom = new javax.swing.JLabel();
+        kartaDuza = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -105,6 +112,33 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(closeButton);
         closeButton.setBounds(1439, 80, 80, 60);
 
+        walczZPotworemZRekiButton.setText("Walcz z potworem z ręki");
+        walczZPotworemZRekiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                walczZPotworemZRekiButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(walczZPotworemZRekiButton);
+        walczZPotworemZRekiButton.setBounds(870, 610, 190, 23);
+
+        wezKarteDrzwiButton.setText("Weź kartę drzwi");
+        wezKarteDrzwiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wezKarteDrzwiButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(wezKarteDrzwiButton);
+        wezKarteDrzwiButton.setBounds(720, 610, 130, 23);
+
+        zrobioneButton.setText("Zrobione");
+        zrobioneButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zrobioneButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(zrobioneButton);
+        zrobioneButton.setBounds(800, 610, 130, 23);
+
         koniecTuryButton.setText("Koniec tury");
         koniecTuryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +146,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(koniecTuryButton);
-        koniecTuryButton.setBounds(0, 550, 130, 23);
+        koniecTuryButton.setBounds(800, 610, 130, 23);
         koniecTuryButton.getAccessibleContext().setAccessibleName("");
 
         otworzDrzwiButton.setText("Otwórz drzwi");
@@ -122,7 +156,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(otworzDrzwiButton);
-        otworzDrzwiButton.setBounds(0, 520, 130, 23);
+        otworzDrzwiButton.setBounds(800, 610, 130, 23);
 
         walczButton.setText("Walcz z potworem");
         walczButton.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +165,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczButton);
-        walczButton.setBounds(0, 420, 130, 23);
+        walczButton.setBounds(800, 610, 130, 23);
 
         odrzucKartyButton.setText("Odrzuc karty");
         odrzucKartyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -142,15 +176,6 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(odrzucKartyButton);
         odrzucKartyButton.setBounds(0, 580, 130, 23);
 
-        wezDoRekiButton.setText("Weź kartę do ręki");
-        wezDoRekiButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                wezDoRekiButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(wezDoRekiButton);
-        wezDoRekiButton.setBounds(0, 450, 130, 23);
-
         wylozZRekiButton.setText("Wyłóż kartę z ręki");
         wylozZRekiButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,9 +183,18 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wylozZRekiButton);
-        wylozZRekiButton.setBounds(0, 490, 130, 23);
+        wylozZRekiButton.setBounds(0, 610, 130, 23);
         wylozZRekiButton.getAccessibleContext().setAccessibleName("Wyłóż na stół");
         wylozZRekiButton.getAccessibleContext().setAccessibleDescription("");
+
+        wezDoRekiButton.setText("Weź kartę do ręki");
+        wezDoRekiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wezDoRekiButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(wezDoRekiButton);
+        wezDoRekiButton.setBounds(797, 610, 130, 23);
 
         otwarteDrzwi.setBackground(new java.awt.Color(25, 91, 19));
         otwarteDrzwi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder()));
@@ -193,6 +227,15 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(poziom);
         poziom.setBounds(1100, 240, 90, 20);
 
+        kartaDuza.setBackground(new java.awt.Color(25, 91, 19));
+        kartaDuza.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        kartaDuza.setForeground(new java.awt.Color(255, 255, 255));
+        kartaDuza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kartaDuza.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        kartaDuza.setOpaque(true);
+        getContentPane().add(kartaDuza);
+        kartaDuza.setBounds(1100, 410, 220, 190);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gameboard.jpg"))); // NOI18N
         background.setOpaque(true);
         getContentPane().add(background);
@@ -224,24 +267,22 @@ public class Gra extends javax.swing.JFrame {
 
     private void otworzDrzwiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otworzDrzwiButtonActionPerformed
         otworzDrzwiButton.setVisible(false);
-        Drzwi d = KontrolerGry.karty.nastepnaKartaDrzwi();
+        Drzwi drzwi = KontrolerGry.karty.nastepnaKartaDrzwi();
         CopyOnWriteArrayList<Karta> nastepneDrzwi = new CopyOnWriteArrayList();
-        nastepneDrzwi.add(d);
+        nastepneDrzwi.add(drzwi);
         ustawKartyNaPanelu(otwarteDrzwi, nastepneDrzwi);
-
-        if (d instanceof Potwor) {
-            walczButton.setVisible(true);
-        } else {
-            wezDoRekiButton.setVisible(true);
-        }
+        tura.otworzDrzwi(drzwi);
     }//GEN-LAST:event_otworzDrzwiButtonActionPerformed
 
     private void wezDoRekiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wezDoRekiButtonActionPerformed
         KontrolerGry.gracz.kartyWRece.add(((KartaGUI) otwarteDrzwi.getComponent(0)).karta);
+
+        wezDoRekiButton.setVisible(false);
         aktualizujKartyIPoziomyGracza();
         wyczyscKartyPoOtwarciuDrzwi();
-        wezDoRekiButton.setVisible(false);
-        koniecTuryButton.setVisible(true);//roboczo bo to nie kończy jeszcze tury, trzeba pociągnąć kartę albo walczyc ze swoim potworem 
+
+        wezKarteDrzwiButton.setVisible(true);
+        walczZPotworemZRekiButton.setVisible(true);
     }//GEN-LAST:event_wezDoRekiButtonActionPerformed
 
     private void walczButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_walczButtonActionPerformed
@@ -261,6 +302,36 @@ public class Gra extends javax.swing.JFrame {
 
         aktualizujKartyIPoziomyGracza();
     }//GEN-LAST:event_odrzucKartyButtonActionPerformed
+
+    private void zrobioneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zrobioneButtonActionPerformed
+        Drzwi d = (Drzwi) ((KartaGUI) otwarteDrzwi.getComponent(0)).karta;
+        KontrolerGry.karty.odrzuconeDrzwi.add(d);
+        wyczyscKartyPoOtwarciuDrzwi();
+        zrobioneButton.setVisible(false);
+        wezKarteDrzwiButton.setVisible(true);
+        walczZPotworemZRekiButton.setVisible(true);
+    }//GEN-LAST:event_zrobioneButtonActionPerformed
+
+    private void wezKarteDrzwiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wezKarteDrzwiButtonActionPerformed
+        wezKarteDrzwiButton.setVisible(false);
+        walczZPotworemZRekiButton.setVisible(false);
+        Drzwi drzwi = KontrolerGry.karty.nastepnaKartaDrzwi();
+        KontrolerGry.gracz.kartyWRece.add(drzwi);
+        aktualizujKartyIPoziomyGracza();
+        wyczyscKartyPoOtwarciuDrzwi();
+        koniecTuryButton.setVisible(true);
+    }//GEN-LAST:event_wezKarteDrzwiButtonActionPerformed
+
+    private void walczZPotworemZRekiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_walczZPotworemZRekiButtonActionPerformed
+        walczZPotworemZRekiButton.setVisible(false);
+        wezKarteDrzwiButton.setVisible(false);
+
+        CopyOnWriteArrayList<Karta> zaznaczonyPotwor = zaznaczoneKarty(kartyWRece);
+        KontrolerGry.gracz.kartyWRece.remove(zaznaczoneKarty(kartyWRece).get(0));
+        aktualizujKartyIPoziomyGracza();
+        ustawKartyNaPanelu(otwarteDrzwi, zaznaczonyPotwor);
+        walczButton.setVisible(true);
+    }//GEN-LAST:event_walczZPotworemZRekiButtonActionPerformed
 
     private void wyczyscKartyPoOtwarciuDrzwi() {
         otwarteDrzwi.removeAll();
@@ -289,6 +360,7 @@ public class Gra extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton closeButton;
     private javax.swing.JButton homeButton;
+    public static javax.swing.JLabel kartaDuza;
     private javax.swing.JPanel kartyNaStole;
     private javax.swing.JPanel kartyWRece;
     private javax.swing.JLabel klasa;
@@ -299,8 +371,11 @@ public class Gra extends javax.swing.JFrame {
     private javax.swing.JLabel poziom;
     private javax.swing.JLabel poziomBojowy;
     private javax.swing.JLabel rasa;
-    private javax.swing.JButton walczButton;
-    private javax.swing.JButton wezDoRekiButton;
+    public static javax.swing.JButton walczButton;
+    private javax.swing.JButton walczZPotworemZRekiButton;
+    public static javax.swing.JButton wezDoRekiButton;
+    private javax.swing.JButton wezKarteDrzwiButton;
     private javax.swing.JButton wylozZRekiButton;
+    public static javax.swing.JButton zrobioneButton;
     // End of variables declaration//GEN-END:variables
 }
