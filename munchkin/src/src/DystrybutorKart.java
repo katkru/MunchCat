@@ -21,33 +21,33 @@ public class DystrybutorKart {
 
     private void zainicjalizujKartyDrzwi() {
         kartyDrzwi = new CopyOnWriteArrayList();
-        kartyDrzwi.add(new Potwor("osmioscian", "odrzuc wszystkie duże rzeczy", 1, 2));
-        kartyDrzwi.add(new Rasa("rasa1"));
-        kartyDrzwi.add(new Klasa("klasa1"));
-        kartyDrzwi.add(new Potwor("drob", "tracisz 1 poziom", 1, 2));
-        kartyDrzwi.add(new Potwor("osmioscian", "odrzuc wszystkie duże rzeczy", 1, 2));
-        kartyDrzwi.add(new Rasa("rasa3"));
-        kartyDrzwi.add(new Klatwa("klatwa1"));
-        kartyDrzwi.add(new Klatwa("klatwa2"));
-        kartyDrzwi.add(new Klatwa("klatwa3"));
-        kartyDrzwi.add(new Klatwa("klatwa4"));
-        kartyDrzwi.add(new Potwor("drob", "tracisz 1 poziom", 1, 2));
+        kartyDrzwi.add(new Potwor("osmioscian", "czarodziej", "odrzuc wszystkie duże rzeczy", 1, 2));
+        kartyDrzwi.add(new Rasa("rasa1", "czarodziej"));
+        kartyDrzwi.add(new Klasa("klasa1", "czarodziej"));
+        kartyDrzwi.add(new Potwor("drob", "czarodziej", "tracisz 1 poziom", 1, 2));
+        kartyDrzwi.add(new Potwor("osmioscian", "czarodziej", "odrzuc wszystkie duże rzeczy", 1, 2));
+        kartyDrzwi.add(new Rasa("rasa3", "czarodziej"));
+        kartyDrzwi.add(new Klatwa("klatwa1", "czarodziej"));
+        kartyDrzwi.add(new Klatwa("klatwa2", "czarodziej"));
+        kartyDrzwi.add(new Klatwa("klatwa3", "czarodziej"));
+        kartyDrzwi.add(new Klatwa("klatwa4", "czarodziej"));
+        kartyDrzwi.add(new Potwor("drob", "czarodziej", "tracisz 1 poziom", 1, 2));
 
         potasujKarty(kartyDrzwi);
     }
 
     private void zainicjalizujKartySkarbow() {
         kartySkarbow = new CopyOnWriteArrayList();
-        kartySkarbow.add(new Przedmiot("pila", 3) );
-        kartySkarbow.add(new Przedmiot("miecz", 2));
-        kartySkarbow.add(new Przedmiot("buty", 1));
-        kartySkarbow.add(new Przedmiot("portki", 1));
-        kartySkarbow.add(new Przedmiot("hełm", 2));
-        kartySkarbow.add(new Przedmiot("pila", 3));
-        kartySkarbow.add(new Przedmiot("miecz", 2));
-        kartySkarbow.add(new Przedmiot("buty", 1));
-        kartySkarbow.add(new Przedmiot("portki", 1));
-        kartySkarbow.add(new Przedmiot("hełm", 2));
+        kartySkarbow.add(new Przedmiot("pila", "czarodziej", 3));
+        kartySkarbow.add(new Przedmiot("miecz", "czarodziej", 2));
+        kartySkarbow.add(new Przedmiot("buty", "czarodziej", 1));
+        kartySkarbow.add(new Przedmiot("portki", "czarodziej", 1));
+        kartySkarbow.add(new Przedmiot("hełm", "czarodziej", 2));
+        kartySkarbow.add(new Przedmiot("pila", "czarodziej", 3));
+        kartySkarbow.add(new Przedmiot("miecz", "czarodziej", 2));
+        kartySkarbow.add(new Przedmiot("buty", "czarodziej", 1));
+        kartySkarbow.add(new Przedmiot("portki", "czarodziej", 1));
+        kartySkarbow.add(new Przedmiot("hełm", "czarodziej", 2));
         potasujKarty(kartySkarbow);
     }
 

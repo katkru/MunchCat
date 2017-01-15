@@ -4,8 +4,8 @@ public class Przedmiot extends Skarb {
 
     public final int bonus;
 
-    public Przedmiot(String n, int b) {
-        super(n);
+    public Przedmiot(String n, String s, int b) {
+        super(n, s);
         bonus = b;
     }
 

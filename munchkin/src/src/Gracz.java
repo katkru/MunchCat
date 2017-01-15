@@ -32,9 +32,9 @@ public class Gracz {
         //TODO sprawdzanie czy np nie chcemy dodać drugich butów
         if (k instanceof Potwor) {
             return false;
-        }
-        else if(k instanceof Klatwa)
+        } else if (k instanceof Klatwa) {
             return false;
+        }
         return true;
     }
 
@@ -43,7 +43,7 @@ public class Gracz {
             if (czyMoznaWylozycKarteNaStol(karta)) {
                 kartyNaStole.add(karta);
                 kartyWRece.remove(karta);
-                
+
                 if (karta instanceof Przedmiot) {
                     sumaBonusuow += ((Przedmiot) karta).bonus;
                 } else if (karta instanceof Klasa) {
@@ -67,6 +67,16 @@ public class Gracz {
             karty.odrzuconeDrzwi.add((Drzwi) karta);
         } else {
             karty.odrzuconeSkarby.add((Skarb) karta);
+        }
+    }
+
+    public void usunBonusy(Karta karta) {
+        if (karta instanceof Przedmiot) {
+            sumaBonusuow -= ((Przedmiot) karta).bonus;
+        } else if (karta instanceof Klasa) {
+            klasa = null;
+        } else if (karta instanceof Rasa) {
+            rasa = null;
         }
     }
 }

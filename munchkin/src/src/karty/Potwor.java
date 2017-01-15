@@ -7,8 +7,8 @@ public class Potwor extends Drzwi {
     public final int poziom;
     public int poziomyDoWygrania = 1;
 
-    public Potwor(String n, String k, int s, int p) {
-        super(n);
+    public Potwor(String n, String sciezka, String k, int s, int p) {
+        super(n, sciezka);
         marnyKoniec = k;
         skarby = s;
         poziom = p;

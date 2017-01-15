@@ -22,13 +22,25 @@ public class KontrolerGry {
 
     public void odrzucZaznaczoneKary(CopyOnWriteArrayList<Karta> kartyOdrzucone) {
         for (Karta karta : kartyOdrzucone) {
-            gracz.kartyNaStole.remove(karta);
-            gracz.kartyWRece.remove(karta);
+            if (gracz.kartyNaStole.remove(karta)) {
+                gracz.usunBonusy(karta);
+            } else {
+                gracz.kartyWRece.remove(karta);
+            }
+
             if (karta instanceof Drzwi) {
                 karty.odrzuconeDrzwi.add((Drzwi) karta);
             } else {
                 karty.odrzuconeSkarby.add((Skarb) karta);
             }
         }
+    }
+    
+    public static boolean maPotworaWRece(){
+        for(Karta karta : gracz.kartyWRece){
+            if(karta instanceof Potwor)
+                return true;
+        }
+        return false;
     }
 }

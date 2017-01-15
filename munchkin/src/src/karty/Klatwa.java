@@ -2,8 +2,8 @@ package src.karty;
 
 public class Klatwa extends Drzwi {
 
-    public Klatwa(String n) {
-        super(n);
+    public Klatwa(String n, String s) {
+        super(n, s);
     }
 
 }
