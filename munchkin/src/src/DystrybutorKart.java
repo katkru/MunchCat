@@ -20,34 +20,51 @@ public class DystrybutorKart {
     }
 
     private void zainicjalizujKartyDrzwi() {
-        kartyDrzwi = new CopyOnWriteArrayList();
-        kartyDrzwi.add(new Potwor("osmioscian", "czarodziej", "odrzuc wszystkie duże rzeczy", 1, 2));
-        kartyDrzwi.add(new Rasa("rasa1", "czarodziej"));
-        kartyDrzwi.add(new Klasa("klasa1", "czarodziej"));
-        kartyDrzwi.add(new Potwor("drob", "czarodziej", "tracisz 1 poziom", 1, 2));
-        kartyDrzwi.add(new Potwor("osmioscian", "czarodziej", "odrzuc wszystkie duże rzeczy", 1, 2));
-        kartyDrzwi.add(new Rasa("rasa3", "czarodziej"));
-        kartyDrzwi.add(new Klatwa("klatwa1", "czarodziej"));
-        kartyDrzwi.add(new Klatwa("klatwa2", "czarodziej"));
-        kartyDrzwi.add(new Klatwa("klatwa3", "czarodziej"));
-        kartyDrzwi.add(new Klatwa("klatwa4", "czarodziej"));
-        kartyDrzwi.add(new Potwor("drob", "czarodziej", "tracisz 1 poziom", 1, 2));
-
+        kartyDrzwi = new CopyOnWriteArrayList();        
+        kartyDrzwi.add(new Klasa("czarodziej", "czarodziej"));
+        kartyDrzwi.add(new Klasa("wojownik", "wojownik"));
+        kartyDrzwi.add(new Rasa("elf", "elf"));
+        kartyDrzwi.add(new Potwor("altanka", "altanka", "", 2, 8));
+        kartyDrzwi.add(new Potwor("demonica o ciętym języku", "demonica", "", 3, 12));
+        kartyDrzwi.add(new Potwor("forumowy troll", "forumowyTroll", "", 3, 10));
+        kartyDrzwi.add(new Potwor("rozwrzeszczany frajer", "frajer", "", 2, 6));
+        kartyDrzwi.add(new Potwor("galaretowaty ośmiościan", "galaretowataOsmiornica", "", 1, 2));
+        kartyDrzwi.add(new Potwor("lewitujący nochal", "nochal", "", 3, 10));
+        kartyDrzwi.add(new Potwor("harfie", "harfie", "", 2, 4));
+        kartyDrzwi.add(new Potwor("kulawy goblin", "kulawyGoblin", "", 1, 1));
+        kartyDrzwi.add(new Potwor("ślimaki na speedzie", "slimaki", "", 2, 4));
+        kartyDrzwi.add(new Potwor("3872 orki", "orki", "", 3, 10));
+        kartyDrzwi.add(new Potwor("prawnicy", "prawnicy", "", 2, 6));
+        kartyDrzwi.add(new Potwor("żygaczu", "zygaczu", "", 2, 6));
+        kartyDrzwi.add(new Potwor("spalony golem", "spalonyGolem", "", 4, 14));
+        kartyDrzwi.add(new Potwor("pradawne i niewypowiedziane zło", "zlo", "", 4, 14));
+        kartyDrzwi.add(new Potwor("tańczący z kościami", "tanczacyZKosciami", "", 1, 2));
+        kartyDrzwi.add(new Potwor("wielka stopa", "wielkaStopa", "", 3, 12));
+        kartyDrzwi.add(new Potwor("wirko i żwigura", "wirkoIZwigura", "", 4, 16));
+        kartyDrzwi.add(new Klatwa("Sekretny modyfikator mistrza gry", "modyfikator"));
+        kartyDrzwi.add(new Klatwa("wrzątek w mrowisko", "mrowisko"));
+        kartyDrzwi.add(new Klatwa("napój miłosny", "napojMilosny"));
+        kartyDrzwi.add(new Klatwa("pierścień ochrony", "pierscien"));
+        kartyDrzwi.add(new Klatwa("powtórka z masakry", "powtorkaZMasakry"));
+        kartyDrzwi.add(new Klatwa("wybłagany poziom", "wyblagany")); 
         potasujKarty(kartyDrzwi);
     }
 
     private void zainicjalizujKartySkarbow() {
-        kartySkarbow = new CopyOnWriteArrayList();
-        kartySkarbow.add(new Przedmiot("pila", "czarodziej", 3));
-        kartySkarbow.add(new Przedmiot("miecz", "czarodziej", 2));
-        kartySkarbow.add(new Przedmiot("buty", "czarodziej", 1));
-        kartySkarbow.add(new Przedmiot("portki", "czarodziej", 1));
-        kartySkarbow.add(new Przedmiot("hełm", "czarodziej", 2));
-        kartySkarbow.add(new Przedmiot("pila", "czarodziej", 3));
-        kartySkarbow.add(new Przedmiot("miecz", "czarodziej", 2));
-        kartySkarbow.add(new Przedmiot("buty", "czarodziej", 1));
-        kartySkarbow.add(new Przedmiot("portki", "czarodziej", 1));
-        kartySkarbow.add(new Przedmiot("hełm", "czarodziej", 2));
+        kartySkarbow = new CopyOnWriteArrayList();  
+        kartySkarbow.add(new Przedmiot("bandanka prawdziwego macho", "bandankaMacho", 3));
+        kartySkarbow.add(new Przedmiot("buty tyłko-kopania", "butyTylkoKopania", 2));
+        kartySkarbow.add(new Przedmiot("eliksir heroicznej głupoty", "eliksirGlupoty", 1));
+        kartySkarbow.add(new Przedmiot("mikstu-ara przemiany", "miksturaPrzemiany", 1));
+        kartySkarbow.add(new Przedmiot("magioaktywna mikstura rozwałki", "miksturaRozwalki", 1));
+        kartySkarbow.add(new Przedmiot("hełm garnkowy", "helmGarnkowy", 1));
+        kartySkarbow.add(new Przedmiot("dość duży kamyczek", "kamyk", 3));
+        kartySkarbow.add(new Przedmiot("miecz ukradkowego ataku", "miecz", 2));
+        kartySkarbow.add(new Przedmiot("oślizgła zbroja", "oslizglaZbroja", 1));
+        kartySkarbow.add(new Przedmiot("peleryna cienia", "pelerynaCienia", 4));
+        kartySkarbow.add(new Przedmiot("piła łancuchowa krwawego rozczłonkowania", "pila", 3));
+        kartySkarbow.add(new Przedmiot("siedmiomilowe buty", "siedmiomiloweButy", 0));
+        kartySkarbow.add(new Przedmiot("trzy i pół metrowa tyczka", "tyczka", 1));
         potasujKarty(kartySkarbow);
     }
 
