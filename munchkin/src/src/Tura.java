@@ -11,19 +11,26 @@ public class Tura {
         if (drzwi instanceof Potwor) {
             Gra.walczButton.setVisible(true);
         } else if (drzwi instanceof Klatwa) {
+            rzucKlatwe((Klatwa)drzwi);
             Gra.zrobioneButton.setVisible(true);
-            if (((Klatwa) drzwi).isPositive) {
-               KontrolerGry.gracz.poziom += 1;
-            }else {
-                KontrolerGry.gracz.poziom -= 1;
-                if (KontrolerGry.gracz.poziom < 1) 
-                    KontrolerGry.gracz.poziom = 1;
-            }
         } else {
             Gra.wezDoRekiButton.setVisible(true);
         }
     }
-
+    
+    public void rzucKlatwe(Klatwa k) {
+        if (k.typ.equals(Klatwa.TypKlatwy.STRAC_KLASE)) {
+            KontrolerGry.gracz.klasa = null;
+        }else if (k.typ.equals(Klatwa.TypKlatwy.STRAC_POZIOM)) {
+            if (KontrolerGry.gracz.poziom > 1)
+                KontrolerGry.gracz.poziom -= 1;
+        }else if(k.typ.equals(Klatwa.TypKlatwy.STRAC_RASE)){
+            KontrolerGry.gracz.rasa = null;
+        }else {
+            KontrolerGry.gracz.poziom += 1;
+        }
+    }
+    
     public void walka(Potwor potwor, javax.swing.JFrame frame) {
         if (KontrolerGry.gracz.poziomBojowy() > potwor.poziom) {
             KontrolerGry.gracz.poziom += potwor.poziomyDoWygrania;

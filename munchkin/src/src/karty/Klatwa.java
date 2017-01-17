@@ -1,11 +1,15 @@
 package src.karty;
 
 public class Klatwa extends Drzwi {
-    public boolean isPositive;
+    public Klatwa.TypKlatwy typ; 
     
-    public Klatwa(String n, String s, Boolean p) {
+    public Klatwa(String n, String s, Klatwa.TypKlatwy p) {
         super(n, s);
-        isPositive = p;
+        typ = p;
+    }
+    
+    public enum TypKlatwy {
+        STRAC_POZIOM, STRAC_KLASE, STRAC_RASE, ZYSKAJ_POZIOM;
     }
 
 }

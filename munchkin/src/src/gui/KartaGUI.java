@@ -74,6 +74,7 @@ public class KartaGUI extends javax.swing.JPanel {
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
         Gra.kartaDuza.setText("");
+        Gra.kartaDuza.setIcon(null);
     }//GEN-LAST:event_formMouseExited
 
 

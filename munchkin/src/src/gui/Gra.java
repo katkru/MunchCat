@@ -296,6 +296,7 @@ public class Gra extends javax.swing.JFrame {
         nastepneDrzwi.add(drzwi);
         ustawKartyNaPanelu(otwarteDrzwi, nastepneDrzwi, false);
         tura.otworzDrzwi(drzwi);
+        aktualizujKartyIPoziomyGracza();
     }//GEN-LAST:event_otworzDrzwiButtonActionPerformed
 
     private void wezDoRekiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wezDoRekiButtonActionPerformed
