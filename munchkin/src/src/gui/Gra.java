@@ -28,17 +28,17 @@ public class Gra extends javax.swing.JFrame {
     }
 
     public void aktualizujKartyIPoziomyGracza() {
-        poziom.setText("Twój poziom: " + KontrolerGry.gracz.poziom);
-        poziomBojowy.setText("Twój poziom bojowy: " + KontrolerGry.gracz.poziomBojowy());
+        poziom.setText("" + KontrolerGry.gracz.poziom);
+        poziomBojowy.setText("" + KontrolerGry.gracz.poziomBojowy());
         if (KontrolerGry.gracz.klasa != null) {
-            klasa.setText("Twoja klasa: " + KontrolerGry.gracz.klasa.toString());
+            klasa.setText("" + KontrolerGry.gracz.klasa.toString());
         } else {
-            klasa.setText("Twoja klasa: brak");
+            klasa.setText("brak");
         }
         if (KontrolerGry.gracz.rasa != null) {
-            rasa.setText("Twoja rasa: " + KontrolerGry.gracz.rasa.toString());
+            rasa.setText("" + KontrolerGry.gracz.rasa.toString());
         } else {
-            rasa.setText("Twoja rasa: człowiek");
+            rasa.setText("człowiek");
         }
         ustawKartyNaPanelu(kartyNaStole, KontrolerGry.gracz.kartyNaStole, true);
         ustawKartyNaPanelu(kartyWRece, KontrolerGry.gracz.kartyWRece, false);
@@ -88,6 +88,8 @@ public class Gra extends javax.swing.JFrame {
         poziom = new javax.swing.JLabel();
         kartaDuza = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -107,7 +109,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(homeButton);
-        homeButton.setBounds(1230, 60, 80, 60);
+        homeButton.setBounds(1210, 70, 80, 60);
 
         closeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         closeButton.setBorderPainted(false);
@@ -118,7 +120,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(closeButton);
-        closeButton.setBounds(1300, 60, 80, 60);
+        closeButton.setBounds(1260, 70, 80, 60);
 
         walczZPotworemZRekiButton.setText("Walcz z potworem z ręki");
         walczZPotworemZRekiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +129,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczZPotworemZRekiButton);
-        walczZPotworemZRekiButton.setBounds(790, 470, 190, 23);
+        walczZPotworemZRekiButton.setBounds(790, 470, 190, 25);
 
         wezKarteDrzwiButton.setText("Weź kartę drzwi");
         wezKarteDrzwiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +138,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wezKarteDrzwiButton);
-        wezKarteDrzwiButton.setBounds(640, 470, 130, 23);
+        wezKarteDrzwiButton.setBounds(640, 470, 130, 25);
 
         zrobioneButton.setText("Zrobione");
         zrobioneButton.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +147,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(zrobioneButton);
-        zrobioneButton.setBounds(640, 510, 130, 23);
+        zrobioneButton.setBounds(640, 510, 130, 25);
 
         koniecTuryButton.setText("Koniec tury");
         koniecTuryButton.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +156,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(koniecTuryButton);
-        koniecTuryButton.setBounds(790, 510, 130, 23);
+        koniecTuryButton.setBounds(790, 510, 130, 25);
         koniecTuryButton.getAccessibleContext().setAccessibleName("");
 
         otworzDrzwiButton.setText("Otwórz drzwi");
@@ -164,7 +166,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(otworzDrzwiButton);
-        otworzDrzwiButton.setBounds(790, 510, 130, 23);
+        otworzDrzwiButton.setBounds(790, 510, 130, 25);
 
         walczButton.setText("Walcz z potworem");
         walczButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +175,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczButton);
-        walczButton.setBounds(790, 510, 130, 23);
+        walczButton.setBounds(790, 510, 130, 25);
 
         odrzucKartyButton.setText("Odrzuc karty");
         odrzucKartyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -182,7 +184,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(odrzucKartyButton);
-        odrzucKartyButton.setBounds(0, 480, 130, 23);
+        odrzucKartyButton.setBounds(0, 480, 130, 25);
 
         wylozZRekiButton.setText("Wyłóż kartę z ręki");
         wylozZRekiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +193,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wylozZRekiButton);
-        wylozZRekiButton.setBounds(0, 510, 130, 23);
+        wylozZRekiButton.setBounds(0, 510, 130, 25);
         wylozZRekiButton.getAccessibleContext().setAccessibleName("Wyłóż na stół");
         wylozZRekiButton.getAccessibleContext().setAccessibleDescription("");
 
@@ -202,7 +204,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wezDoRekiButton);
-        wezDoRekiButton.setBounds(790, 510, 130, 23);
+        wezDoRekiButton.setBounds(790, 510, 130, 25);
 
         otwarteDrzwi.setBackground(new java.awt.Color(25, 91, 19));
         otwarteDrzwi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder()));
@@ -210,30 +212,38 @@ public class Gra extends javax.swing.JFrame {
         otwarteDrzwi.setBounds(650, 310, 350, 130);
 
         kartyWRece.setBackground(new java.awt.Color(255, 199, 86));
-        kartyWRece.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "karty w ręce"));
+        kartyWRece.setOpaque(false);
         getContentPane().add(kartyWRece);
-        kartyWRece.setBounds(30, 620, 1340, 310);
+        kartyWRece.setBounds(30, 600, 1310, 320);
 
         kartyNaStole.setBackground(new java.awt.Color(25, 91, 19));
         kartyNaStole.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "karty na stole"));
         getContentPane().add(kartyNaStole);
         kartyNaStole.setBounds(20, 310, 620, 160);
 
-        klasa.setText("Twoja klasa: brak");
+        klasa.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
+        klasa.setForeground(new java.awt.Color(204, 204, 204));
+        klasa.setText("brak");
         getContentPane().add(klasa);
-        klasa.setBounds(1090, 220, 170, 14);
+        klasa.setBounds(1130, 240, 200, 80);
 
-        rasa.setText("Twoja rasa: człowiek");
+        rasa.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
+        rasa.setForeground(new java.awt.Color(204, 204, 204));
+        rasa.setText("człowiek");
         getContentPane().add(rasa);
-        rasa.setBounds(1090, 200, 170, 14);
+        rasa.setBounds(1130, 220, 230, 30);
 
-        poziomBojowy.setText("Twój poziom bojowy: 1");
+        poziomBojowy.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
+        poziomBojowy.setForeground(new java.awt.Color(204, 204, 204));
+        poziomBojowy.setText("1");
         getContentPane().add(poziomBojowy);
-        poziomBojowy.setBounds(1090, 170, 130, 14);
+        poziomBojowy.setBounds(1130, 160, 140, 50);
 
-        poziom.setText("Twój poziom: 1");
+        poziom.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
+        poziom.setForeground(new java.awt.Color(204, 204, 204));
+        poziom.setText("1");
         getContentPane().add(poziom);
-        poziom.setBounds(1090, 140, 90, 20);
+        poziom.setBounds(1130, 110, 100, 40);
 
         kartaDuza.setBackground(new java.awt.Color(25, 91, 19));
         kartaDuza.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -244,10 +254,18 @@ public class Gra extends javax.swing.JFrame {
         getContentPane().add(kartaDuza);
         kartaDuza.setBounds(1040, 310, 220, 190);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gameboard.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/backgroundWithData.jpg"))); // NOI18N
         background.setOpaque(true);
         getContentPane().add(background);
         background.setBounds(-10, -50, 2030, 1080);
+
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(600, 210, 41, 16);
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(640, 140, 41, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -372,6 +390,8 @@ public class Gra extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton closeButton;
     private javax.swing.JButton homeButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel kartaDuza;
     private javax.swing.JPanel kartyNaStole;
     private javax.swing.JPanel kartyWRece;
