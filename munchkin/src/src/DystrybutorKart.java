@@ -85,7 +85,7 @@ public class DystrybutorKart {
     public Skarb nastepnaKartaSkarbu() {
         if (kartySkarbow.isEmpty()) {
             kartySkarbow = new CopyOnWriteArrayList<>(odrzuconeSkarby);
-            odrzuconeDrzwi.clear();
+            odrzuconeSkarby.clear();
             potasujKarty(kartySkarbow);
         }
         return kartySkarbow.remove(0);
