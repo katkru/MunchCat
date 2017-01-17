@@ -30,9 +30,11 @@ public class Menu extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(MAXIMIZED_BOTH);
         setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(1250, 800));
+        setMaximumSize(new java.awt.Dimension(1680, 1050));
+        setMinimumSize(new java.awt.Dimension(1680, 1050));
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1680, 1050));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         playButton.setBackground(new java.awt.Color(255, 204, 102));
@@ -48,7 +50,7 @@ public class Menu extends javax.swing.JFrame {
                 playButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 830, 140));
+        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 830, 140));
 
         instructionButton.setBackground(new java.awt.Color(255, 204, 102));
         instructionButton.setFont(new java.awt.Font("Consolas", 0, 48)); // NOI18N
@@ -63,7 +65,7 @@ public class Menu extends javax.swing.JFrame {
                 instructionButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(instructionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 830, 140));
+        getContentPane().add(instructionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 830, 140));
 
         exitButton.setBackground(new Color(0,0,0,0));
         exitButton.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
@@ -75,7 +77,7 @@ public class Menu extends javax.swing.JFrame {
                 exitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1790, 70, 50, 40));
+        getContentPane().add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 100, 50, 40));
 
         authorsButton.setBackground(new java.awt.Color(255, 204, 102));
         authorsButton.setFont(new java.awt.Font("Consolas", 0, 48)); // NOI18N
@@ -86,11 +88,13 @@ public class Menu extends javax.swing.JFrame {
                 authorsButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(authorsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 650, 830, 140));
+        getContentPane().add(authorsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, 830, 140));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu.jpg"))); // NOI18N
+        background.setMaximumSize(new java.awt.Dimension(1700, 1100));
+        background.setMinimumSize(new java.awt.Dimension(1700, 1100));
         background.setPreferredSize(background.getMaximumSize());
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1710, 1130));
 
         pack();
         setLocationRelativeTo(null);

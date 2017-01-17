@@ -88,16 +88,14 @@ public class Gra extends javax.swing.JFrame {
         poziom = new javax.swing.JLabel();
         kartaDuza = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setMaximizedBounds(getMaximizedBounds());
-        setMinimumSize(getMinimumSize());
+        setMinimumSize(new java.awt.Dimension(1, 0));
         setUndecorated(true);
-        setSize(getMaximumSize());
+        setSize(new java.awt.Dimension(1, 2147483647));
         getContentPane().setLayout(null);
 
         homeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
@@ -129,7 +127,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczZPotworemZRekiButton);
-        walczZPotworemZRekiButton.setBounds(790, 470, 190, 25);
+        walczZPotworemZRekiButton.setBounds(780, 520, 190, 25);
 
         wezKarteDrzwiButton.setText("Weź kartę drzwi");
         wezKarteDrzwiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +136,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wezKarteDrzwiButton);
-        wezKarteDrzwiButton.setBounds(640, 470, 130, 25);
+        wezKarteDrzwiButton.setBounds(640, 520, 130, 25);
 
         zrobioneButton.setText("Zrobione");
         zrobioneButton.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +145,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(zrobioneButton);
-        zrobioneButton.setBounds(640, 510, 130, 25);
+        zrobioneButton.setBounds(640, 560, 130, 25);
 
         koniecTuryButton.setText("Koniec tury");
         koniecTuryButton.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +154,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(koniecTuryButton);
-        koniecTuryButton.setBounds(790, 510, 130, 25);
+        koniecTuryButton.setBounds(790, 560, 130, 25);
         koniecTuryButton.getAccessibleContext().setAccessibleName("");
 
         otworzDrzwiButton.setText("Otwórz drzwi");
@@ -166,7 +164,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(otworzDrzwiButton);
-        otworzDrzwiButton.setBounds(790, 510, 130, 25);
+        otworzDrzwiButton.setBounds(790, 560, 130, 25);
 
         walczButton.setText("Walcz z potworem");
         walczButton.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +173,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczButton);
-        walczButton.setBounds(790, 510, 130, 25);
+        walczButton.setBounds(790, 560, 130, 25);
 
         odrzucKartyButton.setText("Odrzuc karty");
         odrzucKartyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +182,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(odrzucKartyButton);
-        odrzucKartyButton.setBounds(0, 480, 130, 25);
+        odrzucKartyButton.setBounds(20, 510, 130, 25);
 
         wylozZRekiButton.setText("Wyłóż kartę z ręki");
         wylozZRekiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +191,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wylozZRekiButton);
-        wylozZRekiButton.setBounds(0, 510, 130, 25);
+        wylozZRekiButton.setBounds(20, 550, 130, 25);
         wylozZRekiButton.getAccessibleContext().setAccessibleName("Wyłóż na stół");
         wylozZRekiButton.getAccessibleContext().setAccessibleDescription("");
 
@@ -204,34 +202,34 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wezDoRekiButton);
-        wezDoRekiButton.setBounds(790, 510, 130, 25);
+        wezDoRekiButton.setBounds(790, 560, 130, 25);
 
         otwarteDrzwi.setBackground(new java.awt.Color(25, 91, 19));
         otwarteDrzwi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder()));
         getContentPane().add(otwarteDrzwi);
-        otwarteDrzwi.setBounds(650, 310, 350, 130);
+        otwarteDrzwi.setBounds(880, 350, 350, 130);
 
         kartyWRece.setBackground(new java.awt.Color(255, 199, 86));
         kartyWRece.setOpaque(false);
         getContentPane().add(kartyWRece);
-        kartyWRece.setBounds(30, 600, 1310, 320);
+        kartyWRece.setBounds(40, 660, 1270, 320);
 
         kartyNaStole.setBackground(new java.awt.Color(25, 91, 19));
         kartyNaStole.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "karty na stole"));
         getContentPane().add(kartyNaStole);
-        kartyNaStole.setBounds(20, 310, 620, 160);
+        kartyNaStole.setBounds(20, 340, 620, 160);
 
         klasa.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
         klasa.setForeground(new java.awt.Color(204, 204, 204));
         klasa.setText("brak");
         getContentPane().add(klasa);
-        klasa.setBounds(1130, 240, 200, 80);
+        klasa.setBounds(1130, 260, 200, 80);
 
         rasa.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
         rasa.setForeground(new java.awt.Color(204, 204, 204));
         rasa.setText("człowiek");
         getContentPane().add(rasa);
-        rasa.setBounds(1130, 220, 230, 30);
+        rasa.setBounds(1130, 230, 230, 30);
 
         poziomBojowy.setFont(new java.awt.Font("Century751 No2 BT", 0, 36)); // NOI18N
         poziomBojowy.setForeground(new java.awt.Color(204, 204, 204));
@@ -250,20 +248,16 @@ public class Gra extends javax.swing.JFrame {
         kartaDuza.setForeground(new java.awt.Color(255, 255, 255));
         kartaDuza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(kartaDuza);
-        kartaDuza.setBounds(1440, 130, 220, 360);
+        kartaDuza.setBounds(1430, 130, 220, 360);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/backgroundWithData.jpg"))); // NOI18N
-        background.setOpaque(true);
+        background.setText("jLabel3");
+        background.setAlignmentY(0.0F);
+        background.setMaximumSize(new java.awt.Dimension(1680, 1050));
+        background.setMinimumSize(new java.awt.Dimension(1680, 1050));
+        background.setPreferredSize(new java.awt.Dimension(1680, 1050));
         getContentPane().add(background);
-        background.setBounds(-10, -50, 2030, 1080);
-
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(600, 210, 41, 16);
-
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(640, 140, 41, 16);
+        background.setBounds(0, 0, 1680, 1050);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -389,8 +383,6 @@ public class Gra extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton closeButton;
     private javax.swing.JButton homeButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel kartaDuza;
     private javax.swing.JPanel kartyNaStole;
     private javax.swing.JPanel kartyWRece;

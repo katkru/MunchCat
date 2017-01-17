@@ -68,7 +68,7 @@ public class Instrukcja extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nextButton);
-        nextButton.setBounds(1730, 830, 90, 40);
+        nextButton.setBounds(1520, 860, 90, 40);
 
         exitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         exitButton.setBorderPainted(false);
@@ -80,7 +80,7 @@ public class Instrukcja extends javax.swing.JFrame {
             }
         });
         getContentPane().add(exitButton);
-        exitButton.setBounds(1440, 80, 80, 60);
+        exitButton.setBounds(1200, 80, 80, 60);
 
         menuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
         menuButton.setBorderPainted(false);
@@ -92,33 +92,33 @@ public class Instrukcja extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menuButton);
-        menuButton.setBounds(1370, 90, 90, 40);
+        menuButton.setBounds(1130, 90, 90, 40);
 
         enlargedCard.setFocusable(false);
         getContentPane().add(enlargedCard);
-        enlargedCard.setBounds(1650, 140, 230, 400);
+        enlargedCard.setBounds(1430, 120, 220, 400);
 
         arrow1.setFocusable(false);
         arrow1.setName(""); // NOI18N
         getContentPane().add(arrow1);
-        arrow1.setBounds(670, 560, 40, 110);
+        arrow1.setBounds(590, 540, 40, 110);
 
         arrow2.setFocusable(false);
         arrow2.setName(""); // NOI18N
         getContentPane().add(arrow2);
-        arrow2.setBounds(480, 560, 40, 110);
+        arrow2.setBounds(430, 540, 40, 110);
 
         cardTable.setName(""); // NOI18N
         getContentPane().add(cardTable);
-        cardTable.setBounds(680, 400, 90, 150);
+        cardTable.setBounds(610, 390, 90, 150);
 
         card1.setName(""); // NOI18N
         getContentPane().add(card1);
-        card1.setBounds(50, 700, 170, 290);
+        card1.setBounds(50, 680, 140, 290);
 
         card2.setName(""); // NOI18N
         getContentPane().add(card2);
-        card2.setBounds(240, 700, 170, 290);
+        card2.setBounds(210, 680, 140, 290);
 
         card3.setFocusCycleRoot(true);
         card3.setName(""); // NOI18N
@@ -128,7 +128,7 @@ public class Instrukcja extends javax.swing.JFrame {
             }
         });
         getContentPane().add(card3);
-        card3.setBounds(420, 700, 170, 290);
+        card3.setBounds(370, 680, 150, 290);
 
         card4.setName(""); // NOI18N
         card4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,15 +137,15 @@ public class Instrukcja extends javax.swing.JFrame {
             }
         });
         getContentPane().add(card4);
-        card4.setBounds(610, 700, 170, 290);
+        card4.setBounds(530, 680, 150, 290);
 
         card5.setName(""); // NOI18N
         getContentPane().add(card5);
-        card5.setBounds(60, 510, 50, 90);
+        card5.setBounds(50, 510, 50, 90);
 
         card6.setName(""); // NOI18N
         getContentPane().add(card6);
-        card6.setBounds(140, 510, 50, 90);
+        card6.setBounds(120, 510, 50, 90);
 
         card9.setName(""); // NOI18N
         getContentPane().add(card9);
@@ -157,13 +157,13 @@ public class Instrukcja extends javax.swing.JFrame {
 
         card8.setName(""); // NOI18N
         getContentPane().add(card8);
-        card8.setBounds(140, 350, 50, 90);
+        card8.setBounds(130, 350, 50, 90);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/instruction/0.jpg"))); // NOI18N
         background.setFocusable(false);
         background.setOpaque(true);
         getContentPane().add(background);
-        background.setBounds(0, 0, 1920, 1080);
+        background.setBounds(0, 0, 1680, 1050);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

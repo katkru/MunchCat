@@ -45,7 +45,7 @@ public class Autorzy extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1800, 90, 60, 60));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1540, 80, 60, 60));
 
         home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
         home.setBorder(null);
@@ -56,7 +56,7 @@ public class Autorzy extends javax.swing.JFrame {
                 homeActionPerformed(evt);
             }
         });
-        getContentPane().add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 80, 60, 70));
+        getContentPane().add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 70, 60, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/authors.jpg"))); // NOI18N
         jLabel1.setPreferredSize(jLabel1.getMaximumSize());
