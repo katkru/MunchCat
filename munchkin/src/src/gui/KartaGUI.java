@@ -41,16 +41,18 @@ public class KartaGUI extends javax.swing.JPanel {
         });
 
         grafika.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        grafika.setMaximumSize(new java.awt.Dimension(150, 255));
+        grafika.setMinimumSize(new java.awt.Dimension(150, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(grafika, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+            .addComponent(grafika, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(grafika, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(grafika, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

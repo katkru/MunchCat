@@ -22,7 +22,9 @@ public class Komunikat extends javax.swing.JDialog {
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        text.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        text.setFont(new java.awt.Font("Century751 No2 BT", 0, 24)); // NOI18N
+        text.setForeground(new java.awt.Color(255, 255, 255));
+        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text.setToolTipText("");
         getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 230, 80));
 

@@ -210,9 +210,8 @@ public class Gra extends javax.swing.JFrame {
         otwarteDrzwi.setBounds(880, 350, 350, 130);
 
         kartyWRece.setBackground(new java.awt.Color(255, 199, 86));
-        kartyWRece.setOpaque(false);
         getContentPane().add(kartyWRece);
-        kartyWRece.setBounds(40, 660, 1270, 320);
+        kartyWRece.setBounds(40, 680, 1290, 290);
 
         kartyNaStole.setBackground(new java.awt.Color(25, 91, 19));
         kartyNaStole.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "karty na stole"));

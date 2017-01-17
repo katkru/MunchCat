@@ -46,10 +46,10 @@ public class DystrybutorKart {
         kartyDrzwi.add(new Potwor("mucha artystycznego bzyczenia", "mucha", "", 1, 1));
         kartyDrzwi.add(new Potwor("popsuty krakowiak", "krakowiak", "", 1, 2));
         kartyDrzwi.add(new Potwor("wirko i żwigura", "wirkoIZwigura", "", 4, 16));
-        kartyDrzwi.add(new Klatwa("Sekretny modyfikator mistrza gry", "modyfikator", Klatwa.TypKlatwy.STRAC_KLASE));
-        kartyDrzwi.add(new Klatwa("wrzątek w mrowisko", "mrowisko", Klatwa.TypKlatwy.STRAC_RASE));
-        kartyDrzwi.add(new Klatwa("napój miłosny", "napojMilosny", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
-        kartyDrzwi.add(new Klatwa("pierścień ochrony", "pierscien", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
+        kartyDrzwi.add(new Klatwa("Sekretny modyfikator mistrza gry", "modyfikator", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
+        kartyDrzwi.add(new Klatwa("wrzątek w mrowisko", "mrowisko", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
+        kartyDrzwi.add(new Klatwa("napój miłosny", "napojMilosny", Klatwa.TypKlatwy.STRAC_KLASE));
+        kartyDrzwi.add(new Klatwa("pierścień ochrony", "pierscien", Klatwa.TypKlatwy.STRAC_RASE));
         kartyDrzwi.add(new Klatwa("powtórka z masakry", "powtorkaZMasakry", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
         kartyDrzwi.add(new Klatwa("wybłagany poziom", "wyblagany", Klatwa.TypKlatwy.ZYSKAJ_POZIOM)); 
         potasujKarty(kartyDrzwi);
