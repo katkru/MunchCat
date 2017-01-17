@@ -66,6 +66,10 @@ public class KartaGUI extends javax.swing.JPanel {
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
         Gra.kartaDuza.setText(karta.toString());
+        if (!karta.sciezka.equals("")) {
+            String path = "/img/cards_NEW/" + karta.sciezka + ".jpg";
+            Gra.kartaDuza.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
+        }
     }//GEN-LAST:event_formMouseEntered
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited

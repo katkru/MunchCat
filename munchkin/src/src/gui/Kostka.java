@@ -47,6 +47,8 @@ public class Kostka extends javax.swing.JDialog {
         dice = new javax.swing.JLabel();
         text = new javax.swing.JLabel();
         okButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,10 +63,13 @@ public class Kostka extends javax.swing.JDialog {
                 diceMouseClicked(evt);
             }
         });
-        getContentPane().add(dice, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 130, 120));
+        getContentPane().add(dice, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 130, 120));
 
+        text.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        text.setForeground(new java.awt.Color(255, 255, 255));
         text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 220, 40));
+        text.setAutoscrolls(true);
+        getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 320, 40));
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
@@ -72,10 +77,18 @@ public class Kostka extends javax.swing.JDialog {
                 okButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(okButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
+        getContentPane().add(okButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+
+        jLabel1.setText("Wyrzucenie 5 lub 6 oczek oznacza, że dałeś nogi za pas");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 20));
+
+        jLabel2.setFont(new java.awt.Font("Century751 No2 BT", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ten potwór jest stanowczo za silny - uciekaj!");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice.jpg"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 320));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,7 +98,7 @@ public class Kostka extends javax.swing.JDialog {
         if (value >= 5) {
             text.setText("Uff, udało ci się uciec");
         } else {
-            text.setText("Niestety nie udało Ci się uciec przed potworem. Lądujesz znów na 1 poziomie");
+            text.setText("Przegrywasz... Witaj na 1 poziomie");
         }
         okButton.setVisible(true);
         pack();
@@ -106,6 +119,8 @@ public class Kostka extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JLabel dice;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton okButton;
     private javax.swing.JLabel text;
     // End of variables declaration//GEN-END:variables

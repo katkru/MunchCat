@@ -249,10 +249,8 @@ public class Gra extends javax.swing.JFrame {
         kartaDuza.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         kartaDuza.setForeground(new java.awt.Color(255, 255, 255));
         kartaDuza.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        kartaDuza.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        kartaDuza.setOpaque(true);
         getContentPane().add(kartaDuza);
-        kartaDuza.setBounds(1040, 310, 220, 190);
+        kartaDuza.setBounds(1440, 130, 220, 360);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/backgroundWithData.jpg"))); // NOI18N
         background.setOpaque(true);
