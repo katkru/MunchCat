@@ -20,7 +20,7 @@ public class DystrybutorKart {
     }
 
     private void zainicjalizujKartyDrzwi() {
-        kartyDrzwi = new CopyOnWriteArrayList();        
+        kartyDrzwi = new CopyOnWriteArrayList();
         kartyDrzwi.add(new Klasa("czarodziej", "czarodziej"));
         kartyDrzwi.add(new Klasa("wojownik", "wojownik"));
         kartyDrzwi.add(new Rasa("elf", "elf"));
@@ -51,12 +51,25 @@ public class DystrybutorKart {
         kartyDrzwi.add(new Klatwa("napój miłosny", "napojMilosny", Klatwa.TypKlatwy.STRAC_KLASE));
         kartyDrzwi.add(new Klatwa("pierścień ochrony", "pierscien", Klatwa.TypKlatwy.STRAC_RASE));
         kartyDrzwi.add(new Klatwa("powtórka z masakry", "powtorkaZMasakry", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
-        kartyDrzwi.add(new Klatwa("wybłagany poziom", "wyblagany", Klatwa.TypKlatwy.ZYSKAJ_POZIOM)); 
+        kartyDrzwi.add(new Klatwa("wybłagany poziom", "wyblagany", Klatwa.TypKlatwy.ZYSKAJ_POZIOM));
         potasujKarty(kartyDrzwi);
     }
 
     private void zainicjalizujKartySkarbow() {
-        kartySkarbow = new CopyOnWriteArrayList();  
+        kartySkarbow = new CopyOnWriteArrayList();
+        kartySkarbow.add(new Przedmiot("bandanka prawdziwego macho", "bandankaMacho", 3));
+        kartySkarbow.add(new Przedmiot("buty tyłko-kopania", "butyTylkoKopania", 2));
+        kartySkarbow.add(new Przedmiot("eliksir heroicznej głupoty", "eliksirGlupoty", 1));
+        kartySkarbow.add(new Przedmiot("mikstu-ara przemiany", "miksturaPrzemiany", 1));
+        kartySkarbow.add(new Przedmiot("magioaktywna mikstura rozwałki", "miksturaRozwalki", 1));
+        kartySkarbow.add(new Przedmiot("hełm garnkowy", "helmGarnkowy", 1));
+        kartySkarbow.add(new Przedmiot("dość duży kamyczek", "kamyk", 3));
+        kartySkarbow.add(new Przedmiot("miecz ukradkowego ataku", "miecz", 2));
+        kartySkarbow.add(new Przedmiot("oślizgła zbroja", "oslizglaZbroja", 1));
+        kartySkarbow.add(new Przedmiot("peleryna cienia", "pelerynaCienia", 4));
+        kartySkarbow.add(new Przedmiot("piła łancuchowa krwawego rozczłonkowania", "pila", 3));
+        kartySkarbow.add(new Przedmiot("siedmiomilowe buty", "siedmiomiloweButy", 0));
+        kartySkarbow.add(new Przedmiot("trzy i pół metrowa tyczka", "tyczka", 1));
         kartySkarbow.add(new Przedmiot("bandanka prawdziwego macho", "bandankaMacho", 3));
         kartySkarbow.add(new Przedmiot("buty tyłko-kopania", "butyTylkoKopania", 2));
         kartySkarbow.add(new Przedmiot("eliksir heroicznej głupoty", "eliksirGlupoty", 1));

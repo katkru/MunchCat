@@ -278,8 +278,13 @@ public class Gra extends javax.swing.JFrame {
     }//GEN-LAST:event_wylozZRekiButtonActionPerformed
 
     private void koniecTuryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koniecTuryButtonActionPerformed
-        otworzDrzwiButton.setVisible(true);
-        koniecTuryButton.setVisible(false);
+        if (!tura.czyGraczJuzWygral(this)) {
+            otworzDrzwiButton.setVisible(true);
+            koniecTuryButton.setVisible(false);
+        }
+        else{
+            close();
+        }
     }//GEN-LAST:event_koniecTuryButtonActionPerformed
 
     private void otworzDrzwiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_otworzDrzwiButtonActionPerformed
@@ -287,13 +292,13 @@ public class Gra extends javax.swing.JFrame {
         Drzwi drzwi = KontrolerGry.karty.nastepnaKartaDrzwi();
         CopyOnWriteArrayList<Karta> nastepneDrzwi = new CopyOnWriteArrayList();
         nastepneDrzwi.add(drzwi);
-        ustawKartyNaPanelu(otwarteDrzwi, nastepneDrzwi, false);
+        ustawKartyNaPanelu(otwarteDrzwi, nastepneDrzwi, true);
         tura.otworzDrzwi(drzwi);
         aktualizujKartyIPoziomyGracza();
     }//GEN-LAST:event_otworzDrzwiButtonActionPerformed
 
     private void wezDoRekiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wezDoRekiButtonActionPerformed
-        KontrolerGry.gracz.kartyWRece.add(((KartaGUI) otwarteDrzwi.getComponent(0)).karta);
+        KontrolerGry.gracz.kartyWRece.add(((KartaMalaGUI) otwarteDrzwi.getComponent(0)).karta);
 
         wezDoRekiButton.setVisible(false);
         aktualizujKartyIPoziomyGracza();
@@ -301,12 +306,12 @@ public class Gra extends javax.swing.JFrame {
 
         wezKarteDrzwiButton.setVisible(true);
         if (KontrolerGry.maPotworaWRece()) {
-            walczZPotworemZRekiButton.setVisible(true);////////////////////////////////////
+            walczZPotworemZRekiButton.setVisible(true);
         }
     }//GEN-LAST:event_wezDoRekiButtonActionPerformed
 
     private void walczButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_walczButtonActionPerformed
-        Potwor potwor = (Potwor) ((KartaGUI) otwarteDrzwi.getComponent(0)).karta;
+        Potwor potwor = (Potwor) ((KartaMalaGUI) otwarteDrzwi.getComponent(0)).karta;
         tura.walka(potwor, this);
 
         aktualizujKartyIPoziomyGracza();
@@ -324,14 +329,15 @@ public class Gra extends javax.swing.JFrame {
     }//GEN-LAST:event_odrzucKartyButtonActionPerformed
 
     private void zrobioneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zrobioneButtonActionPerformed
-        Drzwi d = (Drzwi) ((KartaGUI) otwarteDrzwi.getComponent(0)).karta;
+        Drzwi d = (Drzwi) ((KartaMalaGUI) otwarteDrzwi.getComponent(0)).karta;
         KontrolerGry.karty.odrzuconeDrzwi.add(d);
         wyczyscKartyPoOtwarciuDrzwi();
         zrobioneButton.setVisible(false);
         wezKarteDrzwiButton.setVisible(true);
         if (KontrolerGry.maPotworaWRece()) {
-            walczZPotworemZRekiButton.setVisible(true);///////////////////////////////
+            walczZPotworemZRekiButton.setVisible(true);
         }
+        aktualizujKartyIPoziomyGracza();
     }//GEN-LAST:event_zrobioneButtonActionPerformed
 
     private void wezKarteDrzwiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wezKarteDrzwiButtonActionPerformed
@@ -351,7 +357,7 @@ public class Gra extends javax.swing.JFrame {
         CopyOnWriteArrayList<Karta> zaznaczonyPotwor = zaznaczoneKarty(kartyWRece);
         KontrolerGry.gracz.kartyWRece.remove(zaznaczoneKarty(kartyWRece).get(0));
         aktualizujKartyIPoziomyGracza();
-        ustawKartyNaPanelu(otwarteDrzwi, zaznaczonyPotwor, false);
+        ustawKartyNaPanelu(otwarteDrzwi, zaznaczonyPotwor, true);
         walczButton.setVisible(true);
     }//GEN-LAST:event_walczZPotworemZRekiButtonActionPerformed
 

@@ -17,6 +17,8 @@ public class KontrolerGry {
 
     private void rozdajKarty() {
         gracz.kartyWRece.add(karty.nastepnaKartaDrzwi());
+        gracz.kartyWRece.add(karty.nastepnaKartaDrzwi());
+        gracz.kartyWRece.add(karty.nastepnaKartaSkarbu());
         gracz.kartyWRece.add(karty.nastepnaKartaSkarbu());
     }
 

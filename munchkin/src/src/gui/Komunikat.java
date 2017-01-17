@@ -2,10 +2,13 @@ package src.gui;
 
 public class Komunikat extends javax.swing.JDialog {
 
-    public Komunikat(java.awt.Frame parent, String tekst) {
+    boolean znikac;
+
+    public Komunikat(java.awt.Frame parent, String tekst, boolean maZniknac) {
         super(parent, true);
         initComponents();
         text.setText(tekst);
+        znikac = maZniknac;
     }
 
     @SuppressWarnings("unchecked")
@@ -22,7 +25,7 @@ public class Komunikat extends javax.swing.JDialog {
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        text.setFont(new java.awt.Font("Century751 No2 BT", 0, 24)); // NOI18N
+        text.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         text.setForeground(new java.awt.Color(255, 255, 255));
         text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text.setToolTipText("");
@@ -42,8 +45,19 @@ public class Komunikat extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void close() {
+        java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue().
+                postEvent(new java.awt.event.WindowEvent(this, java.awt.event.WindowEvent.WINDOW_CLOSING));
+    }
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        this.dispose();
+
+        if (znikac) {
+            final Menu menu = new Menu();
+            menu.setVisible(true);
+            close();
+        } else {
+            this.dispose();
+        }
     }//GEN-LAST:event_okButtonActionPerformed
 
 

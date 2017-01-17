@@ -16,7 +16,7 @@ public class Kostka extends javax.swing.JDialog {
         super(parent, true);
         initComponents();
         marnyKoniec = k;
-        timerDice = new Timer(500, diceAction);
+        timerDice = new Timer(100, diceAction);
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent e) {

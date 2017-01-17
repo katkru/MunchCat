@@ -29,7 +29,6 @@ public class Gracz {
     }
 
     private boolean czyMoznaWylozycKarteNaStol(Karta k) {
-        //TODO sprawdzanie czy np nie chcemy dodać drugich butów
         if (k instanceof Potwor) {
             return false;
         } else if (k instanceof Klatwa) {
