@@ -40,13 +40,18 @@ public class DystrybutorKart {
         kartyDrzwi.add(new Potwor("pradawne i niewypowiedziane zło", "zlo", "", 4, 14));
         kartyDrzwi.add(new Potwor("tańczący z kościami", "tanczacyZKosciami", "", 1, 2));
         kartyDrzwi.add(new Potwor("wielka stopa", "wielkaStopa", "", 3, 12));
+        kartyDrzwi.add(new Potwor("niezapowiedziana wizyta mamy", "mother", "", 1, 2));
+        kartyDrzwi.add(new Potwor("złamany paznokieć", "paznokiec", "", 1, 3));
+        kartyDrzwi.add(new Potwor("dworcowy hot-dog (?)", "hotdog", "", 1, 1));
+        kartyDrzwi.add(new Potwor("mucha artystycznego bzyczenia", "mucha", "", 1, 1));
+        kartyDrzwi.add(new Potwor("popsuty krakowiak", "krakowiak", "", 1, 2));
         kartyDrzwi.add(new Potwor("wirko i żwigura", "wirkoIZwigura", "", 4, 16));
-        kartyDrzwi.add(new Klatwa("Sekretny modyfikator mistrza gry", "modyfikator"));
-        kartyDrzwi.add(new Klatwa("wrzątek w mrowisko", "mrowisko"));
-        kartyDrzwi.add(new Klatwa("napój miłosny", "napojMilosny"));
-        kartyDrzwi.add(new Klatwa("pierścień ochrony", "pierscien"));
-        kartyDrzwi.add(new Klatwa("powtórka z masakry", "powtorkaZMasakry"));
-        kartyDrzwi.add(new Klatwa("wybłagany poziom", "wyblagany")); 
+        kartyDrzwi.add(new Klatwa("Sekretny modyfikator mistrza gry", "modyfikator", true));
+        kartyDrzwi.add(new Klatwa("wrzątek w mrowisko", "mrowisko", false));
+        kartyDrzwi.add(new Klatwa("napój miłosny", "napojMilosny", true));
+        kartyDrzwi.add(new Klatwa("pierścień ochrony", "pierscien", true));
+        kartyDrzwi.add(new Klatwa("powtórka z masakry", "powtorkaZMasakry", false));
+        kartyDrzwi.add(new Klatwa("wybłagany poziom", "wyblagany", true)); 
         potasujKarty(kartyDrzwi);
     }
 

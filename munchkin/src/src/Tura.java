@@ -12,6 +12,13 @@ public class Tura {
             Gra.walczButton.setVisible(true);
         } else if (drzwi instanceof Klatwa) {
             Gra.zrobioneButton.setVisible(true);
+            if (((Klatwa) drzwi).isPositive) {
+               KontrolerGry.gracz.poziom += 1;
+            }else {
+                KontrolerGry.gracz.poziom -= 1;
+                if (KontrolerGry.gracz.poziom < 1) 
+                    KontrolerGry.gracz.poziom = 1;
+            }
         } else {
             Gra.wezDoRekiButton.setVisible(true);
         }
@@ -20,6 +27,7 @@ public class Tura {
     public void walka(Potwor potwor, javax.swing.JFrame frame) {
         if (KontrolerGry.gracz.poziomBojowy() > potwor.poziom) {
             KontrolerGry.gracz.poziom += potwor.poziomyDoWygrania;
+            System.out.print(potwor.poziomyDoWygrania);
             KontrolerGry.gracz.kartyWRece.add(KontrolerGry.karty.nastepnaKartaSkarbu());
             KontrolerGry.karty.odrzuconeDrzwi.add(potwor);
             Komunikat wygrana = new Komunikat(frame, "<html>Wygrałeś walkę!<br>Dostaniesz skarby i poziom!</html>");

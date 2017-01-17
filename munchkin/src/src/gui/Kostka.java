@@ -85,7 +85,7 @@ public class Kostka extends javax.swing.JDialog {
         if (value >= 5) {
             text.setText("Uff, udało ci się uciec");
         } else {
-            text.setText("Niestety " + marnyKoniec);
+            text.setText("Niestety nie udało Ci się uciec przed potworem. Lądujesz znów na 1 poziomie");
         }
         okButton.setVisible(true);
         pack();
