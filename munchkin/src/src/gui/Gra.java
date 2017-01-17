@@ -127,7 +127,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczZPotworemZRekiButton);
-        walczZPotworemZRekiButton.setBounds(780, 520, 190, 25);
+        walczZPotworemZRekiButton.setBounds(1060, 500, 190, 25);
 
         wezKarteDrzwiButton.setText("Weź kartę drzwi");
         wezKarteDrzwiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +136,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wezKarteDrzwiButton);
-        wezKarteDrzwiButton.setBounds(640, 520, 130, 25);
+        wezKarteDrzwiButton.setBounds(840, 500, 200, 25);
 
         zrobioneButton.setText("Zrobione");
         zrobioneButton.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +145,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(zrobioneButton);
-        zrobioneButton.setBounds(640, 560, 130, 25);
+        zrobioneButton.setBounds(840, 540, 200, 25);
 
         koniecTuryButton.setText("Koniec tury");
         koniecTuryButton.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +154,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(koniecTuryButton);
-        koniecTuryButton.setBounds(790, 560, 130, 25);
+        koniecTuryButton.setBounds(1060, 540, 190, 25);
         koniecTuryButton.getAccessibleContext().setAccessibleName("");
 
         otworzDrzwiButton.setText("Otwórz drzwi");
@@ -164,7 +164,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(otworzDrzwiButton);
-        otworzDrzwiButton.setBounds(790, 560, 130, 25);
+        otworzDrzwiButton.setBounds(1060, 540, 190, 25);
 
         walczButton.setText("Walcz z potworem");
         walczButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +173,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(walczButton);
-        walczButton.setBounds(790, 560, 130, 25);
+        walczButton.setBounds(1060, 540, 190, 25);
 
         odrzucKartyButton.setText("Odrzuc karty");
         odrzucKartyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -182,7 +182,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(odrzucKartyButton);
-        odrzucKartyButton.setBounds(20, 510, 130, 25);
+        odrzucKartyButton.setBounds(150, 510, 180, 25);
 
         wylozZRekiButton.setText("Wyłóż kartę z ręki");
         wylozZRekiButton.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +191,7 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wylozZRekiButton);
-        wylozZRekiButton.setBounds(20, 550, 130, 25);
+        wylozZRekiButton.setBounds(370, 510, 170, 25);
         wylozZRekiButton.getAccessibleContext().setAccessibleName("Wyłóż na stół");
         wylozZRekiButton.getAccessibleContext().setAccessibleDescription("");
 
@@ -202,12 +202,12 @@ public class Gra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(wezDoRekiButton);
-        wezDoRekiButton.setBounds(790, 560, 130, 25);
+        wezDoRekiButton.setBounds(1060, 540, 190, 25);
 
         otwarteDrzwi.setBackground(new java.awt.Color(25, 91, 19));
         otwarteDrzwi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder()));
         getContentPane().add(otwarteDrzwi);
-        otwarteDrzwi.setBounds(880, 350, 350, 130);
+        otwarteDrzwi.setBounds(870, 350, 350, 130);
 
         kartyWRece.setBackground(new java.awt.Color(255, 199, 86));
         getContentPane().add(kartyWRece);

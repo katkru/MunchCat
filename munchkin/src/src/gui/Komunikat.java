@@ -29,7 +29,7 @@ public class Komunikat extends javax.swing.JDialog {
         text.setForeground(new java.awt.Color(255, 255, 255));
         text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text.setToolTipText("");
-        getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 230, 80));
+        getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 230, 130));
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
